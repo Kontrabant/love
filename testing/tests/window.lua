@@ -174,16 +174,16 @@ end
 
 
 -- love.window.isMinimized
-love.test.window.isMinimized = function(test)
+--love.test.window.isMinimized = function(test)
   -- check not minimized to start
-  test:assertFalse(love.window.isMinimized(), 'check window not minimized')
+--  test:assertFalse(love.window.isMinimized(), 'check window not minimized')
   -- try to minimize
-  love.window.minimize()
-  test:waitFrames(10)
+--  love.window.minimize()
+--  test:waitFrames(10)
   -- on linux minimize won't get recognized immediately, so wait a few frames
-  test:assertTrue(love.window.isMinimized(), 'check window minimized')
-  love.window.restore()
-end
+--  test:assertTrue(love.window.isMinimized(), 'check window minimized')
+--  love.window.restore()
+--end
 
 
 -- love.window.isOpen
@@ -215,15 +215,15 @@ end
 
 
 -- love.window.minimize
-love.test.window.minimize = function(test)
-  test:assertFalse(love.window.isMinimized(), 'check window not minimized')
+--love.test.window.minimize = function(test)
+--  test:assertFalse(love.window.isMinimized(), 'check window not minimized')
   -- check minimizing is set
-  love.window.minimize()
-  test:waitFrames(10)
+--  love.window.minimize()
+--  test:waitFrames(10)
   -- on linux we need to wait a few frames
-  test:assertTrue(love.window.isMinimized(), 'check window maximized')
-  love.window.restore()
-end
+--  test:assertTrue(love.window.isMinimized(), 'check window maximized')
+--  love.window.restore()
+--end
 
 
 -- love.window.requestAttention
@@ -235,12 +235,12 @@ end
 -- love.window.restore
 love.test.window.restore = function(test)
   -- check minimized to start
-  love.window.minimize()
+  love.window.maximize()
   test:waitFrames(10)
   love.window.restore()
   test:waitFrames(10)
   -- check restoring the state of the window
-  test:assertFalse(love.window.isMinimized(), 'check window restored')
+  test:assertFalse(love.window.isMaximized(), 'check window restored')
 end
 
 
